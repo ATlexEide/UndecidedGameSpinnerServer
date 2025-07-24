@@ -6,3 +6,5 @@ async function getUserProfile(req, res) {
     .then((result) => result.json())
     .then((result) => res.send(result));
 }
+
+exports.getUserProfile = getUserProfile;
