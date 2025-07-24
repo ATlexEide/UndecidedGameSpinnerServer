@@ -1,11 +1,12 @@
 const express = require("express");
+const { getUserProfile, getUserTest } = require("./Utils/getUserProfile");
 const app = express();
 const port = 3000;
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+app.get("/user/:id", async (req, res) => getUserProfile(req, res));
+
+app.get("/user", (req, res) => getUserTest(req, res));
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`UndecidedGameSpinner server listening on port ${port}`);
 });
