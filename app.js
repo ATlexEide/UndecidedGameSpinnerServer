@@ -1,5 +1,5 @@
 const express = require("express");
-const { getUserProfile, getUserTest } = require("./Utils/getUserProfile");
+const { getUserProfile, getUserTest } = require("./src/Utils/getUserProfile");
 const app = express();
 const port = 3000;
 
