@@ -8,7 +8,11 @@ async function getGameDetails(req, res) {
     )}`
   )
     .then((result) => result.json())
-    .then((result) => res.send(result));
+    .then((result) => res.send(result))
+    .catch((err) => {
+      throw new Error(`Failed to fetch game details:
+                      ${err}`);
+    });
 }
 
 exports.getGameDetails = getGameDetails;
