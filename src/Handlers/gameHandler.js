@@ -1,7 +1,7 @@
 const { getGameDetails } = require("../Utils/getGameDetails");
 
 async function handleGame(req, res) {
-  if (!req.params.id)
+  if (!req.params.appid)
     res.status(errors.gameHandlerNoId.status).send(errors.gameHandlerNoId);
 
   if (!req.params.action)
@@ -11,7 +11,7 @@ async function handleGame(req, res) {
 
   switch (req.action) {
     case "details":
-      res.send(await getGameDetails(req));
+      res.send(await getGameDetails(req.params.appid));
       break;
 
     default:
