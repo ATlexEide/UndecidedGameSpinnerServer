@@ -1,4 +1,5 @@
 const { getGameDetails } = require("../Utils/getGameDetails");
+const { errors } = require("../Errors.js");
 
 async function handleGame(req, res) {
   if (!req.params.appid)
