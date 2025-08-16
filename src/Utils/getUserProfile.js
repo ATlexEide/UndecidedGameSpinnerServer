@@ -1,10 +1,8 @@
 require("dotenv").config();
 
-async function getUserProfile(req) {
-  console.log(req);
-  console.log(req.params);
+async function getUserProfile(steamid) {
   return await fetch(
-    `http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/?key=${process.env.STEAM_API_KEY}&format=json&steamids=${req.params.id}`
+    `http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/?key=${process.env.STEAM_API_KEY}&format=json&steamids=${steamid}`
   )
     .then((result) => result.json())
     .catch((err) => {
