@@ -9,6 +9,7 @@ const port = 3000;
 app.use(cors());
 
 app.get("/", (req, res) => res.send("Hellooooo world"));
+
 // Action: "profile" or "library"
 app.get("/user{/:steamid}{/:action}", async (req, res) => handleUser(req, res));
 
