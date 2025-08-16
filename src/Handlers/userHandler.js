@@ -3,7 +3,7 @@ const { errors } = require("../Errors.js");
 const { getUserLibrary } = require("../Utils/getUserLibrary.js");
 
 async function handleUser(req, res) {
-  if (!req.params.id)
+  if (!req.params.steamid)
     res.status(errors.userHandlerNoId.status).send(errors.userHandlerNoId);
 
   if (!req.params.action)
@@ -13,11 +13,11 @@ async function handleUser(req, res) {
 
   switch (req.params.action) {
     case "profile":
-      res.send(await getUserProfile(req));
+      res.send(await getUserProfile(req.params.steamid));
       break;
 
     case "library":
-      res.send(await getUserLibrary(req));
+      res.send(await getUserLibrary(req.params.steamid));
       break;
 
     default:
