@@ -16,12 +16,8 @@ app.get("/", (req, res) => res.send("Hellooooo world"));
 // Action: "profile" or "library"
 app.get("/user{/:steamid}{/:action}", async (req, res) => handleUser(req, res));
 
-// "Legacy"
-app.get("/library/:id", async (req, res) => getUserLibrary(req, res));
-
+// Action: "details"
 app.get("/game{/:appid}{/:action}", async (req, res) => handleGame(req, res));
-
-app.get("/game/:id", async (req, res) => getGameDetails(req, res));
 
 // app.get("/test", async (req, res) => test(req, res));
 
