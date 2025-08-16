@@ -4,6 +4,7 @@ const { getUserLibrary } = require("./Utils/getUserLibrary.js");
 const { getGameDetails } = require("./Utils/getGameDetails.js");
 const { test } = require("./Utils/test.js");
 const { handleUser } = require("./Handlers/userHandler.js");
+const { handleGame } = require("./Handlers/gameHandler.js");
 
 const app = express();
 const cors = require("cors");
@@ -13,10 +14,12 @@ app.use(cors());
 
 app.get("/", (req, res) => res.send("Hellooooo world"));
 // Action: "profile" or "library"
-app.get("/user{/:id}{/:action}", async (req, res) => handleUser(req, res));
+app.get("/user{/:steamid}{/:action}", async (req, res) => handleUser(req, res));
 
 // "Legacy"
 app.get("/library/:id", async (req, res) => getUserLibrary(req, res));
+
+app.get("/game{/:appid}{/:action}", async (req, res) => handleGame(req, res));
 
 app.get("/game/:id", async (req, res) => getGameDetails(req, res));
 
