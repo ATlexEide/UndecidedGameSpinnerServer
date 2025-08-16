@@ -1,8 +1,4 @@
 const express = require("express");
-const { getUserProfile } = require("./Utils/getUserProfile.js");
-const { getUserLibrary } = require("./Utils/getUserLibrary.js");
-const { getGameDetails } = require("./Utils/getGameDetails.js");
-const { test } = require("./Utils/test.js");
 const { handleUser } = require("./Handlers/userHandler.js");
 const { handleGame } = require("./Handlers/gameHandler.js");
 
