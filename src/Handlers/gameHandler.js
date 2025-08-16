@@ -9,6 +9,7 @@ async function handleGame(req, res) {
     res
       .status(errors.gameHandlerNoAction.status)
       .send(errors.gameHandlerNoAction);
+
   switch (req.params.action) {
     case "details":
       res.send(await getGameDetails(req.params.appid));
