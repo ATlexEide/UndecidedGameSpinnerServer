@@ -19,8 +19,6 @@ app.get("/user{/:steamid}{/:action}", async (req, res) => handleUser(req, res));
 // Action: "details"
 app.get("/game{/:appid}{/:action}", async (req, res) => handleGame(req, res));
 
-// app.get("/test", async (req, res) => test(req, res));
-
 app.listen(port, () => {
   console.log(`UndecidedGameSpinner server listening on port ${port}`);
 });
