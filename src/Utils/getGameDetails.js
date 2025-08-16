@@ -1,11 +1,8 @@
 require("dotenv").config();
 
-async function getGameDetails(req) {
-  console.log(req.params.id);
+async function getGameDetails(appid) {
   return await fetch(
-    `https://store.steampowered.com/api/appdetails?appids=${Number(
-      req.params.id
-    )}`
+    `https://store.steampowered.com/api/appdetails?appids=${Number(appid)}`
   )
     .then((result) => result.json())
     .catch((err) => {
